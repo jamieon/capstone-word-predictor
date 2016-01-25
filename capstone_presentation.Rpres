@@ -2,8 +2,9 @@ Capstone presentation of word prediction app
 ========================================================
 
 author: Jamieon
-date: January 24th, 2016
 
+date: January 24th, 2016
+ 
 
 Overview
 ========================================================
@@ -11,34 +12,36 @@ Overview
 Go to https://jamieon.shinyapps.io/word-predictor/ to try out the presented shiny app.
 
 The application:
-- predicts next word after word inputs by the user
-- shows top 5 words with their probablities
-- is fast after loading the data
+
+* predicts next word after word inputs by the user
+
+* shows top 5 words with their probablities
+
+* is fast after loading the data
 
 
 Data processing
 ========================================================
 The following steps are taken in data processing phase:
 
-1. tokenize: wrote a get_tokens function, takes files and return tokens
-2. get n-grams freqency: use data.table library processes the data
+* tokenize: a get_tokens function is written, files taken and tokens returned
+
+* to get n-grams freqency: data.table library is used to processes the data
 
 
 Algorithm
 ========================================================
-n-gram freqency data is used: 
+n-gram freqency data is used and: 
 
-1. apply Good-Turning discounting for freq<10 1,2,3-gram 
-2. using Katz-back off to calculate the p_kz(w3|w1,w2), p_kz(w1|w2)
-3. store the model using ARPA format
+* Good-Turning discounting for freq<10 1,2,3-gram is applied
+
+* using Katz-back off the p_kz(w3|w1,w2) and p_kz(w1|w2) are calculated
+
+* the model is stored using ARPA format
 
 
-Algorithm (extended)
+Application screenshot
 ========================================================
-n-gram freqency data: 
 
-1. apply Good-Turning discounting for freq<10 1,2,3-gram 
-2. using Katz-back off to calculate the p_kz(w3|w1,w2), p_kz(w1|w2)
-3. store the model using ARPA format
-
+![app image](appimage.png)
 
